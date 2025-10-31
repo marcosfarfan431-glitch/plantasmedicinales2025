@@ -1,0 +1,518 @@
+/* Estilos Generales */
+:root {
+    --primary-color: #4CAF50; /* Verde vibrante */
+    --secondary-color: #8BC34A; /* Verde más claro */
+    --accent-color: #FFC107; /* Amarillo para resaltar */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --bg-dark: #222;
+    --bg-light: #f9f9f9;
+    --card-bg: #fff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Animaciones globales */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Header & Navbar */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x800/66BB6A/FFFFFF?text=Jardín+de+Plantas+Medicinales') no-repeat center center/cover;
+    color: var(--light-text-color);
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--light-text-color);
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--light-text-color);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInLeft 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    animation: slideInRight 1s ease-out;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Secciones Generales */
+section {
+    padding: 80px 0;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Sección de Plantas */
+.plants-section {
+    background-color: var(--bg-light);
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.plant-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.plant-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.plant-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.plant-card:hover img {
+    transform: scale(1.05);
+}
+
+.plant-card h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.plant-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.plant-card .learn-more {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.plant-card .learn-more:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Detalle de Planta (Overlay) */
+.plant-detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.plant-detail-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.plant-detail-content {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.plant-detail-overlay.active .plant-detail-content {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+#detail-title {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#detail-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#detail-description {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+
+/* Sección de Preguntas Frecuentes (FAQ) */
+.faq-section {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+}
+
+.faq-section h2 {
+    color: var(--light-text-color);
+}
+
+.faq-section h2::after {
+    background-color: var(--accent-color);
+}
+
+.faq-container {
+    margin-top: 50px;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+
+.faq-question {
+    padding: 20px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #e0e0e0;
+}
+
+.faq-question .faq-icon {
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: var(--card-bg);
+    font-size: 1.05em;
+    color: #555;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Ajusta según el contenido, puedes usar un valor mayor */
+    padding: 20px 30px;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    background-color: var(--bg-dark);
+    color: var(--light-text-color);
+}
+
+.contact-section h2 {
+    color: var(--light-text-color);
+}
+
+.contact-section h2::after {
+    background-color: var(--primary-color);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #333;
+    color: var(--light-text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    background-color: #444;
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form .cta-button {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-dark);
+    color: #aaa;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 0 15px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .plant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plant-card {
+        padding: 20px;
+    }
+
+    .faq-question {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+
+    .faq-answer {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANTAS MEDICINALES</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">PLANTAS MEDICINALES</a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#plantas">Plantas</a></li>
+                    <li><a href="#preguntas">Preguntas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Descubre el Poder de la Naturaleza</h1>
+            <p>Explora los beneficios y propiedades de las plantas medicinales.</p>
+            <button class="cta-button" onclick="scrollToSection('plantas')">Explorar Plantas</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="plantas" class="plants-section">
+            <div class="container">
+                <h2>Nuestras Plantas Destacadas</h2>
+                <div class="plant-grid">
+                    <div class="plant-card" data-plant="coca">
+                        <img src="img/coca.jpeg" alt="Hoja de Coca">
+                        <h3>Hoja de Coca</h3>
+                        <p>Una planta ancestral con propiedades estimulantes y medicinales...</p>
+                        <button class="learn-more">Ver más</button>
+                    </div>
+                    <div class="plant-card" data-plant="sabila">
+                        <img src="img/sabila.jpeg" alt="Sábila">
+                        <h3>Sábila</h3>
+                        <p>Conocida por sus propiedades cicatrizantes y antiinflamatorias...</p>
+                        <button class="learn-more">Ver más</button>
+                    </div>
+                    <div class="plant-card" data-plant="manzanilla">
+                        <img src="img/manzanilla.jpeg" alt="Manzanilla">
+                        <h3>Manzanilla</h3>
+                        <p>Una infusión popular por sus efectos relajantes y digestivos...</p>
+                        <button class="learn-more">Ver más</button>
+                    </div>
+                    <div class="plant-card" data-plant="menta">
+                        <img src="img/menta.jpg" alt="Menta">
+                        <h3>Menta</h3>
+                        <p>Refrescante y digestiva, ideal para aliviar malestares estomacales...</p>
+                        <button class="learn-more">Ver más</button>
+                    </div>
+                    <div class="plant-card" data-plant="eucalipto">
+                        <img src="img/eucalipto.jpeg"   alt="Eucalipto">
+                        <h3>Eucalipto</h3>
+                        <p>Ideal para problemas respiratorios, con propiedades descongestionantes...</p>
+                        <button class="learn-more">Ver más</button>
+                    </div>
+                </div>
+                <div id="plant-detail" class="plant-detail-overlay">
+                    <div class="plant-detail-content">
+                        <span class="close-button">&times;</span>
+                        <h3 id="detail-title"></h3>
+                        <img id="detail-image" src="" alt="">
+                        <p id="detail-description"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="preguntas" class="faq-section">
+            <div class="container">
+                <h2>Preguntas Frecuentes sobre Plantas Medicinales</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">¿Cuál es la diferencia entre una planta medicinal y una hierba aromática? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">Aunque a menudo se superponen, una planta medicinal se usa específicamente por sus propiedades terapéuticas, mientras que una hierba aromática se usa principalmente por su sabor y aroma en la cocina, aunque muchas también tienen beneficios para la salud.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Es seguro usar plantas medicinales? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">Muchas plantas medicinales son seguras cuando se usan correctamente, pero algunas pueden tener efectos secundarios o interactuar con medicamentos. Siempre es recomendable consultar a un profesional de la salud antes de usarlas, especialmente si tienes condiciones médicas preexistentes o estás embarazada.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Cómo se preparan las plantas medicinales? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">Las preparaciones más comunes incluyen infusiones (tés), decocciones (hervir la planta), tinturas (extractos en alcohol), cataplasmas (aplicaciones tópicas) y aceites esenciales. La preparación depende de la planta y el uso deseado.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Dónde puedo conseguir plantas medicinales de buena calidad? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">Puedes encontrarlas en herboristerías, tiendas de productos naturales, mercados especializados o incluso cultivarlas tú mismo. Es importante asegurarse de que provengan de fuentes confiables y sean de buena calidad, preferiblemente orgánicas.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Las plantas medicinales son un sustituto de la medicina convencional? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">No necesariamente. En muchos casos, las plantas medicinales son un complemento a la medicina convencional, no un reemplazo. Para enfermedades graves o crónicas, siempre se debe buscar atención médica profesional.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Qué propiedades tiene la Hoja de Coca? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">La Hoja de Coca ha sido tradicionalmente usada como estimulante, para combatir el cansancio, el mal de altura y como digestivo. Contiene vitaminas, minerales y alcaloides.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Para qué sirve la Sábila (Aloe Vera)? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">La Sábila es ampliamente reconocida por sus propiedades cicatrizantes, antiinflamatorias, hidratantes y antibacterianas, ideal para quemaduras, irritaciones de la piel y problemas digestivos.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Cómo se utiliza la Manzanilla para la relajación? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">Una infusión de flores de manzanilla es un remedio común para la ansiedad, el insomnio y el estrés debido a sus compuestos sedantes. También ayuda a aliviar problemas digestivos.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Qué beneficios tiene la Menta? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">La Menta es conocida por aliviar problemas digestivos como la indigestión, náuseas y gases. También es un buen descongestionante nasal y tiene propiedades analgésicas leves.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Para qué enfermedades respiratorias se recomienda el Eucalipto? <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">El Eucalipto es muy eficaz para afecciones respiratorias como resfriados, gripe, bronquitis y sinusitis. Ayuda a descongestionar las vías respiratorias y tiene propiedades expectorantes.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <h2>¿Tienes alguna pregunta?</h2>
+                <p>Envíanos un mensaje y te responderemos lo antes posible.</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Tu Nombre">
+                    <input type="email" placeholder="Tu Correo Electrónico">
+                    <textarea placeholder="Tu Mensaje"></textarea>
+                    <button type="submit" class="cta-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 PLANTAS MEDICINALES. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
